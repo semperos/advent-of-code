@@ -1,0 +1,8 @@
+/ Part 1
+as:";"/-1_=read"i"; bs:eval"($as)" / Read and eval as list of lists
+xs:^*'bs; ys:^@[;1]'bs             / Bind xs, ys to first, second cols; sorted
+say+/abs xs-ys                     / Sum the absolute differences
+/ Part 2
+nub:?xs                            / Unique items in xs
+sim:nub!+/+nub=`ys                 / Similarity: Dict from items in xs to their frequency in ys
+say+/xs*sim xs                     / Sum of the product of xs similarities
