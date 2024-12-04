@@ -1,0 +1,21 @@
+ex:-rq/7 6 4 2 1
+1 2 7 8 9
+9 7 6 2 1
+1 3 2 4 5
+8 6 4 4 1
+1 3 6 7 9
+/
+ex:-read"i"
+as:sub["\n";";"]ex
+bs:eval"($as)"
+safe:{grd:or[x~^x;x~|^x]; diff:abs-/2^x; and[grd;&/0<diff;&/4>diff]}
++/safe'bs
+/ Part 2
+/ Think this requires an outer product
+safe:{grd:or[x~^x;x~|^x]; diff:abs-/2^x; l:+/0=0<diff; h:+/0=4>diff; and[grd;2>l+h]}
+b:1 2 7 8 9
+safe b
+diff:abs-/2^b
+0<diff
+0=4>diff
+safe'bs
